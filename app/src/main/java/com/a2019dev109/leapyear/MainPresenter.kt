@@ -6,5 +6,7 @@ class MainPresenter(private val view: MainContract.View): MainContract.Presenter
         if (year.toInt() % 400 == 0){
             view.showIsLeapYearOrNot(true)
         }
+        else
+            view.showIsLeapYearOrNot(false)
     }
 }
