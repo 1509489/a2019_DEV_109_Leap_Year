@@ -3,10 +3,10 @@ package com.a2019dev109.leapyear
 class MainPresenter(private val view: MainContract.View): MainContract.Presenter {
 
     override fun isLeapYear(year: String) {
-        if (year.toInt() % 400 == 0){
-            view.showIsLeapYearOrNot(true)
+        when {
+            year.toInt() % 400 == 0 -> view.showIsLeapYearOrNot(true)
+            year.toInt() % 4 == 0 && year.toInt() % 100 != 0 -> view.showIsLeapYearOrNot(true)
+            else -> view.showIsLeapYearOrNot(false)
         }
-        else
-            view.showIsLeapYearOrNot(false)
     }
 }
