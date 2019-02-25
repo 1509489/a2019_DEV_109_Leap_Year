@@ -62,4 +62,15 @@ class MainPresenterTest {
         }
         verify(view, times(years.size)).showIsLeapYearOrNot(false)
     }
+
+    @Test
+    fun isYearNegativeValue(){
+        val years = arrayOf(-2004, -2019, -2000)
+
+        for (year in years)
+            mainPresenter.isLeapYear(year.toString())
+
+        verify(view, times(years.size)).showIsLeapYearOrNot(false)
+        verify(view, times(years.size)).showMessage("Year cannot be negative value")
+    }
 }
