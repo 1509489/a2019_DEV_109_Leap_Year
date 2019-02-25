@@ -7,6 +7,10 @@ class MainPresenter(private val view: MainContract.View): MainContract.Presenter
             view.showMessage("Year cannot be negative value")
             view.showIsLeapYearOrNot(false)
         }
+        else if (year.length < 4 || year.length > 4){
+            view.showMessage("Year is either too long or short. Year should be like: (2000 or 1901)")
+            view.showIsLeapYearOrNot(false)
+        }
         else{
             when {
                 year.toInt() % 400 == 0 -> view.showIsLeapYearOrNot(true)
