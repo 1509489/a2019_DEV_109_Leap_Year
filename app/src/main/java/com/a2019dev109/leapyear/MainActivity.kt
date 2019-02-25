@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun showMessage(message: String) {
-
+        if (!mainPresenter.isValidInput())
+            tvMessage.text = message
     }
 
     fun onCheckYear(view: View){
