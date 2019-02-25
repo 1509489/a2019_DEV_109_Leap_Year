@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">a2019_DEV_109_Leap_Year</string>
+    <string name="enter_a_year">Enter A Year</string>
+    <string name="check_year">Check Year</string>
+    <string name="info_text">Enter a year to check if it is a leap year or not</string>
+    <string name="is_leap_year">is a Leap Year</string>
+    <string name="not_leap_year">is not a Leap Year</string>
+</resources>
