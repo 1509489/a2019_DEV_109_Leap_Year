@@ -37,4 +37,25 @@ class MainActivityTest {
         onView(withId(R.id.btnCheck)).perform(click())
         onView(withId(R.id.tvMessage)).check(ViewAssertions.matches(withText("$year is not a Leap Year")))
     }
+
+    @Test
+    fun showYearNotValidLength(){
+        val years = arrayOf("20014", "201")
+
+        for (year in years){
+            onView(withId(R.id.etYear)).perform(clearText(),typeText(year), closeSoftKeyboard())
+            onView(withId(R.id.btnCheck)).perform(click())
+
+            onView(withId(R.id.tvMessage)).check(ViewAssertions.matches(
+                withText("Year is either too long or short. Year should be like: (2000 or 1901)")))
+        }
+    }
+
+    @Test
+    fun showYearNegativeValue(){
+        onView(withId(R.id.etYear)).perform(clearText(),typeText("-2000"), closeSoftKeyboard())
+        onView(withId(R.id.btnCheck)).perform(click())
+
+        onView(withId(R.id.tvMessage)).check(ViewAssertions.matches(withText("Year cannot be negative value")))
+    }
 }
