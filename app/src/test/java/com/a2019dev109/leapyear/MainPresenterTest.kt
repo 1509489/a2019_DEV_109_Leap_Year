@@ -70,7 +70,6 @@ class MainPresenterTest {
         for (year in years)
             mainPresenter.isLeapYear(year.toString())
 
-        verify(view, times(years.size)).showIsLeapYearOrNot(false)
         verify(view, times(years.size)).showMessage("Year cannot be negative value")
     }
 
@@ -81,7 +80,6 @@ class MainPresenterTest {
         for (year in years)
             mainPresenter.isLeapYear(year.toString())
 
-        verify(view, times(years.size)).showIsLeapYearOrNot(false)
         verify(view, times(years.size)).showMessage("Year is either too long or short. Year should be like: (2000 or 1901)")
     }
 }
