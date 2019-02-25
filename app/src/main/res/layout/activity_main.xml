@@ -37,12 +37,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tvMessage">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_date"
-            android:hint="@string/enter_a_year"
-            android:imeOptions="actionDone"/>
+                android:id="@+id/etYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_date"
+                android:hint="@string/enter_a_year"
+                android:imeOptions="actionDone" android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
