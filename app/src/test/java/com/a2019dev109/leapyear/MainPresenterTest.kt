@@ -32,4 +32,14 @@ class MainPresenterTest {
        }
         verify(view, times(years.size)).showIsLeapYearOrNot(true)
     }
+
+    @Test
+    fun yearsDivisibleBy100ButNot400NotLeapYear(){
+        val years = arrayOf("1700", "1800", "1900", "2100")
+
+        for (year in years){
+            mainPresenter.isLeapYear(year)
+        }
+        verify(view, times(years.size)).showIsLeapYearOrNot(false)
+    }
 }
